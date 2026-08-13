@@ -17,6 +17,10 @@ env/
 .vscode/
 .idea/
 
+# Obsidian — vault config is machine-local (workspace layout, open panes).
+# Remove this line if you'd rather sync settings across machines.
+.obsidian/
+
 # Lightroom / photo working files — keep the repo light.
 # Only web-sized exports belong in docs/assets/images/
 *.lrcat
