@@ -28,7 +28,8 @@ caption has to be supplied explicitly)::
         --source ~/Desktop/2_Web \\
         --page docs/portfolio/index.md \\
         --section Postcards \\
-        --untitled-caption "Reflection with a Nikon SLR"
+        --prefix postcard \\
+        --untitled-caption "Self Reflection with a Nikon SLR"
 
 Fill in the Landscapes series, which is a whole page rather than a section::
 
@@ -45,8 +46,10 @@ Ordering
 every source has one — an export named ``12--Postcard.JPG`` sorts to position
 12. This matters because ``10`` sorts before ``2`` lexically, so filename order
 is not sequence order. Without leading numbers it falls back to IPTC Title,
-alphabetically. Output files are always named ``<series>-NN.jpg``, zero-padded,
-so filesystem, URL and display order agree.
+alphabetically. Output files are named ``<prefix>-NN.jpg``, zero-padded, so
+filesystem, URL and display order agree. ``--prefix`` defaults to the series
+name; Postcards overrides it to the singular ``postcard`` because the files are
+already published under those names and renaming them would break links.
 
 Note that renumbering is positional: adding a photo to the middle of a series
 renames everything after it. That is churn in git, but it keeps the ordering

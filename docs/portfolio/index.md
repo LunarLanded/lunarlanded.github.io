@@ -103,8 +103,20 @@ are the locations.
 
 ## Adding a new series
 
-1. Create a new file in `docs/portfolio/`, e.g. `street.md`
-2. Add web-sized exports to `docs/assets/images/street/`
+1. Create a new file in `docs/portfolio/`, e.g. `street.md`, with an empty
+   `<div class="gallery" markdown>` / `</div>` block where the photos go
+2. Run `tools/build_gallery.py` to resize the exports into
+   `docs/assets/images/street/` and fill in that block:
+
+    ```bash
+    python3 tools/build_gallery.py street \
+        --source ~/Desktop/street-export \
+        --page docs/portfolio/street.md --dry-run
+    ```
+
+    Drop `--dry-run` once the listing looks right. Captions come from each
+    file's IPTC `Title`, so set those in Lightroom before exporting.
+
 3. Register the page under `nav:` in `mkdocs.yml`
 4. Add a card above so it's reachable from this page
 
