@@ -24,8 +24,7 @@ Work grouped into series. Click any image to open it full-size.
 
 ## Postcards
 
-Single frames from further afield — one picture per place, in sequence. Captions
-are the locations.
+Thirty-five places, one frame each. It opens on empty country — an iceberg at El Calafate, the gravel plain of the Skeleton Coast — and fills up with people the further in you get, until the last frame is just me in a window with the camera up.
 
 <div class="gallery" markdown>
 
