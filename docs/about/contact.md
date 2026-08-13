@@ -7,8 +7,8 @@ print requests, and plugin support.
 
 ## Elsewhere
 
-- GitHub — [@\<username\>](https://github.com/LunarLanded)
-- Instagram — [@\<handle\>](https://instagram.com/<handle>)
+- GitHub — [@LunarLanded](https://github.com/LunarLanded)
+- Instagram — [@fododoto](https://instagram.com/fododoto)
 
 ## Response times
 

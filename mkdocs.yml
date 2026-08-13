@@ -176,7 +176,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/LunarLanded
     - icon: fontawesome/brands/instagram
-      link: https://instagram.com/<handle>
+      link: https://instagram.com/fododoto
     - icon: fontawesome/solid/envelope
       link: mailto:hello@csiegel.photography
   generator: false   # hides "Made with Material for MkDocs" — flip to true to credit
