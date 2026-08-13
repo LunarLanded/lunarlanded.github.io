@@ -97,7 +97,7 @@ are the locations.
 
 ![Brooklyn, NYC](../assets/images/postcards/postcard-34.jpg){ loading=lazy }
 
-![Reflection with a Nikon SLR](../assets/images/postcards/postcard-35.jpg){ loading=lazy }
+![Self Reflection with a Nikon SLR](../assets/images/postcards/postcard-35.jpg){ loading=lazy }
 
 </div>
 
