@@ -1,0 +1,87 @@
+/* ---------------------------------------------------------------------------
+   Custom styles on top of Material for MkDocs.
+   Material exposes its design tokens as CSS custom properties, so overriding
+   them here keeps light and dark mode consistent for free.
+   --------------------------------------------------------------------------- */
+
+/* --- Brand accent -------------------------------------------------------- */
+
+:root {
+  --md-accent-fg-color: #e8590c;
+  --md-accent-fg-color--transparent: #e8590c1a;
+  /* Primary is black, so Material would fall back to default blue for links.
+     Point links at the accent instead so the brand colour actually shows up. */
+  --md-typeset-a-color: #c2410c;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #fb923c;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 232;                       /* cooler dark grey */
+  --md-default-bg-color: hsl(232, 15%, 12%);
+}
+
+/* --- Photo galleries ----------------------------------------------------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.gallery p {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.gallery img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
+}
+
+/* Full-bleed single image — add { .wide } after the image */
+.wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 21 / 9 !important;
+}
+
+/* --- Home page ----------------------------------------------------------- */
+
+/* The home page hides nav and toc, so widen the content a little. */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 6px;
+}
+
+/* --- Typography ---------------------------------------------------------- */
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Tighten the gap between a heading and the rule below it in tables. */
+.md-typeset table:not([class]) th {
+  font-weight: 600;
+}
+
+/* --- Print --------------------------------------------------------------- */
+
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+}

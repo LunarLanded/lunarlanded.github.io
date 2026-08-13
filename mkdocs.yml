@@ -1,0 +1,204 @@
+# ---------------------------------------------------------------------------
+# Material for MkDocs configuration
+# Docs: https://squidfunk.github.io/mkdocs-material/reference/
+# ---------------------------------------------------------------------------
+
+site_name: C Siegel Photography
+site_description: Photography, tools, and odds and ends.
+site_author: Charles Siegel
+
+# CANONICAL URL
+#
+# Serving from the subdomain docs.csiegel.photography, which is independent of
+# wherever the main site is hosted (currently Adobe). This keeps working
+# unchanged when the main site moves off Adobe.
+#
+# The matching domain lives in docs/CNAME. It MUST stay inside docs/ so it gets
+# copied into every build — `gh-deploy --force` replaces the gh-pages branch
+# wholesale, so a CNAME written by the GitHub UI would be wiped on next deploy.
+site_url: https://docs.csiegel.photography/
+#
+# Plain GitHub Pages URL, if you want to test before wiring up DNS
+# (delete docs/CNAME too, or GitHub will keep trying to use the domain):
+# site_url: https://lunarlanded.github.io/
+#
+# This lives in the USER-SITE repo (lunarlanded.github.io), so it serves at the
+# root of the domain — no subpath. See README for the consequence: any future
+# project repo under LunarLanded will also appear under this domain.
+
+repo_url: https://github.com/LunarLanded/lunarlanded.github.io
+repo_name: lunarlanded.github.io
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Charles Siegel
+
+# ---------------------------------------------------------------------------
+# Theme
+# ---------------------------------------------------------------------------
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+
+  favicon: assets/images/favicon.png
+  # logo: assets/images/logo.png     # drop a square PNG/SVG here to enable
+
+  icon:
+    repo: fontawesome/brands/github
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  features:
+    # Navigation
+    - navigation.instant          # SPA-style page loads
+    - navigation.instant.progress
+    - navigation.tracking         # URL updates with the active anchor
+    - navigation.tabs             # top-level sections as tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes         # section landing pages merge into the section header
+    - navigation.top              # back-to-top button
+    - navigation.footer           # prev/next links in the footer
+    - toc.follow
+
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - content.tooltips
+
+  palette:
+    # Follows the visitor's OS preference, with a manual toggle.
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+# ---------------------------------------------------------------------------
+# Plugins
+# ---------------------------------------------------------------------------
+
+plugins:
+  - search
+  # Click-to-zoom lightbox for the photo galleries.
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - no-lightbox
+      auto_caption: true
+      caption_position: bottom
+
+# ---------------------------------------------------------------------------
+# Markdown extensions
+#   These are what make the features on the Material "Reference" pages work.
+#   https://squidfunk.github.io/mkdocs-material/reference/
+# ---------------------------------------------------------------------------
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# ---------------------------------------------------------------------------
+# Extra styling / social
+# ---------------------------------------------------------------------------
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LunarLanded
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/<handle>
+    - icon: fontawesome/solid/envelope
+      link: mailto:hello@csiegel.photography
+  generator: false   # hides "Made with Material for MkDocs" — flip to true to credit
+
+# ---------------------------------------------------------------------------
+# Navigation
+#   Every file under docs/ must appear here or MkDocs --strict will complain.
+# ---------------------------------------------------------------------------
+
+nav:
+  - Home: index.md
+  - Portfolio:
+      - portfolio/index.md
+      - Landscapes: portfolio/landscapes.md
+      - Portraits: portfolio/portraits.md
+  - Lightroom Plugin:
+      - plugin/index.md
+      - Installation: plugin/installation.md
+      - Usage: plugin/usage.md
+      - Changelog: plugin/changelog.md
+      - FAQ: plugin/faq.md
+  - About:
+      - about/index.md
+      - Contact: about/contact.md
+      - Licensing: about/licensing.md

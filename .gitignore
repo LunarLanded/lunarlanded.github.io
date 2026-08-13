@@ -1,0 +1,35 @@
+# MkDocs build output
+site/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+
+# Lightroom / photo working files — keep the repo light.
+# Only web-sized exports belong in docs/assets/images/
+*.lrcat
+*.lrcat-*
+*.xmp
+*.dng
+*.CR2
+*.CR3
+*.NEF
+*.ARW
+*.psd
+*.tif
+*.tiff
+
+# Transfer artifacts
+_to_delete/
