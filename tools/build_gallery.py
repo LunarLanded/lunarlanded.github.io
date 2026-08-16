@@ -26,12 +26,11 @@ caption has to be supplied explicitly)::
 
     python3 tools/build_gallery.py postcards \\
         --source ~/Desktop/2_Web \\
-        --page docs/portfolio/index.md \\
-        --section Postcards \\
+        --page docs/portfolio/postcards.md \\
         --prefix postcard \\
         --untitled-caption "Self Reflection with a Nikon SLR"
 
-Fill in the Landscapes series, which is a whole page rather than a section::
+Fill in the Landscapes series, which works the same way::
 
     python3 tools/build_gallery.py landscapes \\
         --source ~/Desktop/landscapes-export \\

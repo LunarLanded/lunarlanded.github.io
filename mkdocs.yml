@@ -192,6 +192,7 @@ nav:
       - portfolio/index.md
       - Landscapes: portfolio/landscapes.md
       - Portraits: portfolio/portraits.md
+      - Postcards: portfolio/postcards.md
   - Lightroom Plugin:
       - plugin/index.md
       - Installation: plugin/installation.md
